@@ -75,13 +75,6 @@ FROM tasks
 
         if not file_name:
             directory = directory.replace('~', os.getenv('HOME', os.path.expandvars('%APPDATA%')))
-            # ------------------ Why is it behaving this way?
-            #>>> a = os.getenv('HOME', 'APPDATA')
-            #>>> b = os.getenv('APPDATA')
-            #>>> print(a)
-            #APPDATA
-            #>>> print(b)
-            #C: \Users\Witt\AppData\Roaming
             file_name = os.path.join(directory, 'tasks.sqlite3')
 
         parent = os.path.dirname(file_name)
